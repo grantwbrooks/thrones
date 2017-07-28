@@ -2,7 +2,9 @@ $(document).ready(function() {
     
     $("#houses img").click(function(){
         var houseid = $(this).attr("id");
-
+        $.get('https://www.anapioficeandfire.com/api/characters?page=1&pageSize=10' , function(res) {
+            console.log(res);
+        }, "json");
         $.get('https://anapioficeandfire.com/api/houses/'+houseid+'' , function(res) {
             //name
             var html_str = "<p>" + res.name + "</p>";
